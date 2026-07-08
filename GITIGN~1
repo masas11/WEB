@@ -1,0 +1,10 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editori
+.vscode/
+.idea/
+
+# Node (u slučaju da kasnije dodaš build alate)
+node_modules/

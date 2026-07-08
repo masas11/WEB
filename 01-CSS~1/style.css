@@ -1,0 +1,67 @@
+/* ===== Osnovni reset ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: system-ui, sans-serif;
+  padding: 2rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.5;
+}
+h1 { margin-bottom: .5rem; }
+h2 { margin: 2rem 0 1rem; color: #38bdf8; }
+.intro { color: #94a3b8; max-width: 60ch; }
+code { background: #1e293b; padding: .1rem .4rem; border-radius: 4px; }
+
+/* =========================================================
+   1) RESPONSIVE GALERIJA
+   auto-fit + minmax pravi grid koji sam menja broj kolona
+   u zavisnosti od širine ekrana — bez ijednog media querya.
+   ========================================================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+.tile {
+  background: linear-gradient(135deg, #6366f1, #38bdf8);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* =========================================================
+   2) LAYOUT STRANICE preko grid-template-areas
+   Čitljiviji način da se definiše raspored blokova —
+   "nacrtaš" layout u ASCII formi.
+   ========================================================= */
+.page-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: 1rem;
+  min-height: 300px;
+}
+.area-header  { grid-area: header; background:#1e293b; padding:1rem; border-radius:8px; }
+.area-sidebar { grid-area: sidebar; background:#1e293b; padding:1rem; border-radius:8px; }
+.area-main    { grid-area: main; background:#1e293b; padding:1rem; border-radius:8px; }
+.area-footer  { grid-area: footer; background:#1e293b; padding:1rem; border-radius:8px; }
+
+/* Na malim ekranima sidebar ide ispod header-a, a ne pored main-a */
+@media (max-width: 600px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+  }
+}

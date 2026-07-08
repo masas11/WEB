@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>07 · DOM manipulacija — To-Do lista</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <h1>To-Do lista</h1>
+    <p class="intro">Klasična vežba za DOM manipulaciju: dodavanje, brisanje, obeležavanje kao urađeno, čuvanje u localStorage.</p>
+
+    <form id="todo-form">
+      <input type="text" id="todo-input" placeholder="Šta treba da uradiš?" autocomplete="off" />
+      <button type="submit">Dodaj</button>
+    </form>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Sve</button>
+      <button class="filter-btn" data-filter="active">Aktivno</button>
+      <button class="filter-btn" data-filter="completed">Završeno</button>
+    </div>
+
+    <ul id="todo-list"></ul>
+    <p id="empty-msg" class="empty-msg">Nema zadataka. Dodaj prvi! 🎉</p>
+    <p class="counter"><span id="items-left">0</span> preostalo</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

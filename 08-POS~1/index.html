@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>08 · Positioning — modal i dropdown</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>CSS Positioning</h1>
+  <p class="intro">position: static / relative / absolute / fixed / sticky — i dva praktična primera: dropdown meni i modal.</p>
+
+  <h2>1. Sticky header (probaj skrolovati)</h2>
+  <div class="scroll-box">
+    <div class="sticky-header">Ja sam sticky dok skroluješ ovaj box</div>
+    <p>Sadržaj... skroluj dole da vidiš efekat sticky pozicioniranja.</p>
+    <p style="height:300px">Još sadržaja radi skrola...</p>
+    <p>Kraj boxa.</p>
+  </div>
+
+  <h2>2. Dropdown meni (position: absolute unutar relative roditelja)</h2>
+  <div class="dropdown">
+    <button id="dropdown-btn">Opcije ▾</button>
+    <ul id="dropdown-menu" class="dropdown-menu" hidden>
+      <li>Profil</li>
+      <li>Podešavanja</li>
+      <li>Odjava</li>
+    </ul>
+  </div>
+
+  <h2>3. Modal (position: fixed preko cele stranice)</h2>
+  <button id="open-modal">Otvori modal</button>
+
+  <div id="modal-overlay" class="modal-overlay" hidden>
+    <div class="modal">
+      <h3>Naslov modala</h3>
+      <p>Modal koristi <code>position: fixed</code> da prekrije celu stranicu, bez obzira na skrol.</p>
+      <button id="close-modal">Zatvori</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

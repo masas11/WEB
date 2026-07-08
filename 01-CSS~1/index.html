@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>01 · CSS Grid</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>CSS Grid Layout</h1>
+  <p class="intro">Dva primera: (1) responsive galerija slika, (2) klasičan layout stranice pomoću <code>grid-template-areas</code>.</p>
+
+  <h2>1. Responsive galerija (auto-fit + minmax)</h2>
+  <div class="gallery">
+    <div class="tile">1</div>
+    <div class="tile">2</div>
+    <div class="tile">3</div>
+    <div class="tile">4</div>
+    <div class="tile">5</div>
+    <div class="tile">6</div>
+    <div class="tile">7</div>
+    <div class="tile">8</div>
+  </div>
+
+  <h2>2. Layout stranice (grid-template-areas)</h2>
+  <div class="page-layout">
+    <header class="area-header">Header</header>
+    <aside class="area-sidebar">Sidebar</aside>
+    <main class="area-main">Main content</main>
+    <footer class="area-footer">Footer</footer>
+  </div>
+</body>
+</html>

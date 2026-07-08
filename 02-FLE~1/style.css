@@ -1,0 +1,64 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; padding: 2rem; background: #0f172a; color: #e2e8f0; line-height: 1.5; }
+h1 { margin: 2rem 0 .5rem; }
+h2 { margin: 2rem 0 1rem; color: #38bdf8; }
+
+/* =========================================================
+   NAVBAR — klasičan flex primer: logo levo, linkovi desno,
+   sve vertikalno centrirano.
+   ========================================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+}
+.logo { font-weight: bold; font-size: 1.2rem; color: #38bdf8; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a { color: #e2e8f0; text-decoration: none; }
+.nav-links a:hover { color: #38bdf8; }
+
+/* =========================================================
+   KARTICE — flex-wrap dozvoljava da elementi "padnu" u novi
+   red kad ponestane prostora, umesto da se sažimaju.
+   ========================================================= */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.card {
+  flex: 1 1 150px; /* rasti, skupljaj se, osnovna širina 150px */
+  background: #1e293b;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* =========================================================
+   CENTRIRANJE — justify-content + align-items rešava
+   "kako centrirati div" pitanje jednom zauvek.
+   ========================================================= */
+.centered-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background: #1e293b;
+  border-radius: 8px;
+}
+.centered-content {
+  background: linear-gradient(135deg, #6366f1, #38bdf8);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* =========================================================
+   ORDER — vizuelni redosled nezavisan od redosleda u HTML-u.
+   Koristi se retko i oprezno (utiče na tab-navigaciju/pristupačnost).
+   ========================================================= */
+.order-demo { display: flex; gap: 1rem; flex-wrap: wrap; }
+.order-item { background: #1e293b; padding: 1rem; border-radius: 8px; flex: 1 1 200px; }

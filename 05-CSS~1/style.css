@@ -1,0 +1,66 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* =========================================================
+   CSS VARIJABLE (custom properties) definisane na :root
+   su dostupne svuda u dokumentu preko var(--ime).
+   Ovo je "svetla" (default) tema.
+   ========================================================= */
+:root {
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --card-bg: #ffffff;
+  --primary: #6366f1;
+  --border: #e2e8f0;
+  --transition-speed: .3s;
+}
+
+/* =========================================================
+   Kad <html> ima data-theme="dark", ove vrednosti PREPISUJU
+   gornje — sav ostatak CSS-a ostaje isti, menjaju se samo
+   vrednosti varijabli.
+   ========================================================= */
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #e2e8f0;
+  --card-bg: #1e293b;
+  --primary: #38bdf8;
+  --border: #334155;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background var(--transition-speed), color var(--transition-speed);
+  line-height: 1.5;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+main { padding: 2rem; max-width: 500px; margin: 0 auto; }
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: background var(--transition-speed), border-color var(--transition-speed);
+}
+.card h2 { margin-bottom: .5rem; }
+.card p { color: var(--text); opacity: .8; margin-bottom: 1rem; }
+
+.toggle-btn, .primary {
+  border: none;
+  border-radius: 8px;
+  padding: .6rem 1rem;
+  cursor: pointer;
+  font-size: .9rem;
+}
+.toggle-btn { background: var(--card-bg); color: var(--text); border: 1px solid var(--border); }
+.primary { background: var(--primary); color: white; }

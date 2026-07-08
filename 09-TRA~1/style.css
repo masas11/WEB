@@ -1,0 +1,74 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; background: #0f172a; color: #e2e8f0; padding: 2rem; line-height: 1.5; }
+h1 { margin-bottom: .3rem; }
+h2 { margin: 2.5rem 0 1rem; color: #38bdf8; }
+.row { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* =========================================================
+   1) OSNOVNI TRANSFORMI — svaki menja element na drugi način,
+   BEZ uticaja na layout ostalih elemenata (za razliku od
+   menjanja width/height/margin, koje "gura" susede).
+   ========================================================= */
+.box {
+  width: 100px;
+  height: 100px;
+  background: #1e293b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .3s ease;
+}
+.scale-hover:hover     { transform: scale(1.15); }
+.rotate-hover:hover    { transform: rotate(15deg); }
+.translate-hover:hover { transform: translateY(-12px); }
+.skew-hover:hover      { transform: skewX(-10deg); }
+
+/* =========================================================
+   2) KOMBINOVANA KARTICA — transform + box-shadow + border
+   menjaju se ZAJEDNO na hover, sa istim transition trajanjem,
+   za osećaj da je "jedan" pokret.
+   ========================================================= */
+.fancy-card {
+  width: 250px;
+  border-radius: 12px;
+  padding: 2px; /* prostor za "border" gradient efekat */
+  background: linear-gradient(135deg, #6366f1, transparent);
+}
+.fancy-card-inner {
+  background: #1e293b;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.fancy-card:hover .fancy-card-inner {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(99,102,241,.3);
+}
+.fancy-card h3 { margin-bottom: .5rem; color: #38bdf8; }
+.fancy-card p { color: #94a3b8; font-size: .9rem; }
+
+/* =========================================================
+   3) ZUMIRANJE SLIKE — trik je overflow: hidden na spoljnom
+   frame-u; sam <img> (ili ovde fake-img) se skalira, ali
+   frame ga "seče" na fiksnu veličinu.
+   ========================================================= */
+.img-frame {
+  width: 220px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.fake-img {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #6366f1, #38bdf8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: transform .4s ease;
+}
+.img-frame:hover .fake-img {
+  transform: scale(1.2);
+}
